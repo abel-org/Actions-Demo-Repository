@@ -9,7 +9,7 @@ Removing a workflow from your repository does not remove it's history either. Lo
 
 ## Step 1: Modify your existing workflow
 
-1. From the **default** branch of your repository, find the file named `.github/workflows/basic-workflow.yaml`
+1. From the **feature/basic-workflow** branch of your repository, find the file named `.github/workflows/basic-workflow.yaml`
 2. Copy the contents below to the file:
 
 ```yaml
@@ -45,7 +45,7 @@ Now we will add another `matrix` variable called `node-version` and use that to 
 name: Matrix Strategy
 on:
   push:
-    branches: feature/matrix
+    branches: feature/basic-workflow
 jobs:
   do-things:
     name: Do Things In A Matrix - ${{ matrix.os }}, ${{ matrix.node-version }}
