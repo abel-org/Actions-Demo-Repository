@@ -5,7 +5,10 @@ on:
 jobs:
   do-things:
     name: Do Things
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
     steps:
       - name: The Thing I've Done
         run: echo "I've done a thing!"
