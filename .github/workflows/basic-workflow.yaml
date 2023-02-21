@@ -1,17 +1,14 @@
-name: Matrix Strategy
+name: Basic Workflow
 on:
   push:
     branches: feature/basic-workflow
 jobs:
   do-things:
-    name: Do Things In A Matrix - ${{ matrix.os }}, ${{ matrix.node-version }}
+    name: Do Things
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [macos-latest, windows-latest]
-        node-version: [14.x, 15.x]
     steps:
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
+      - name: The Thing I've Done
+        run: echo "I've done a thing!"
